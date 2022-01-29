@@ -4,11 +4,18 @@ The weasel program or [Dawkins' weasel](https://www.wikiwand.com/en/Weasel_progr
 
 ## Usage
 
-Execute below command
+Execute below command to populate `METHINKS IT IS LIKE A WEASEL`
 
 ```bash
 ./main.py
 ```
+
+or you can set a custom text. Example:
+
+```bash
+./main.py "MY CuSTOM TEXT"
+```
+
 
 ![til](./gif/term.gif)
 

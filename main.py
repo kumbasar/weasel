@@ -5,9 +5,10 @@ import string
 import random
 import os
 import time
+import sys
 
 """ Input parameters """
-_testString = "METHINKS IT IS LIKE A WEASEL"
+_defaultTestString = "METHINKS IT IS LIKE A WEASEL"
 _population_size = 100
 _mutation_rate = 0.05
 _sleep_time = 0.01
@@ -30,7 +31,7 @@ def mutatetext(text, mutate=_mutation_rate):
     return newtext
 
 
-def scoring(source, target=_testString):
+def scoring(source, target):
 
     """ Score the test """
 
@@ -58,17 +59,22 @@ if __name__ == "__main__":
     logging.basicConfig(filename="weasel.log", level=logging.INFO,
                         filemode='w')
 
-    logging.info("Target text is '{}'".format(_testString))
+    if len(sys.argv) == 2 and sys.argv[1]:
+        targetString = sys.argv[1]
+    else:
+        targetString = _defaultTestString
+
+    logging.info("Target text is '{}'".format(targetString))
 
     # Create chars
     chars = get_chars()
-    max_score = len(_testString)
+    max_score = len(targetString)
     logging.info("Max score is {}".format(max_score))
 
-    gen_text = randomtext(chars, len(_testString))
+    gen_text = randomtext(chars, len(targetString))
     logging.info("Inital text: {}".format(gen_text))
 
-    gen_score = scoring(gen_text, _testString)
+    gen_score = scoring(gen_text, targetString)
     logging.info("'{}' score is {}".format(gen_text, gen_score))
     logging.info("Population size: {}".format(_population_size))
     logging.info("Mutation rate: {}".format(_mutation_rate))
@@ -82,7 +88,7 @@ if __name__ == "__main__":
 
         for i in range(_population_size):
             new_text = mutatetext(pop_text)
-            new_score = scoring(new_text)
+            new_score = scoring(new_text, targetString)
 
             if new_score > gen_score:
                 gen_score = new_score
