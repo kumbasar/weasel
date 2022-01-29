@@ -46,7 +46,8 @@ def scoring(source, target):
 
 
 def get_chars():
-    # letters + digits + whitespace
+    # letters + digits + whitespace + punctuation
+    # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
     chars = string.ascii_letters + string.digits + " " + string.punctuation
 
     logging.info("char list is '{}'".format(chars))
