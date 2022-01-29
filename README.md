@@ -1,6 +1,6 @@
 # Weasel Program
 
-The weasel program or [Dawkins' weasel](https://www.wikiwand.com/en/Weasel_program)
+A python implementation of [Dawkins' weasel](https://www.wikiwand.com/en/Weasel_program).
 
 ## Usage
 
