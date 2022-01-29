@@ -13,7 +13,7 @@ Execute below command to populate `METHINKS IT IS LIKE A WEASEL`
 or you can set a custom text. Example:
 
 ```bash
-./main.py "MY CuSTOM text!?"
+./main.py "MY Cu5T0M text!?"
 ```
 
 
