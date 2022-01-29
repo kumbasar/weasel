@@ -6,6 +6,7 @@ import random
 import os
 import time
 
+""" Input parameters """
 _testString = "METHINKS IT IS LIKE A WEASEL"
 _population_size = 100
 _mutation_rate = 0.05
@@ -13,11 +14,12 @@ _sleep_time = 0.01
 
 
 def randomtext(chars, length):
+    """ Create inital random text """
     return ''.join(random.choice(chars) for i in range(length))
 
 
 def mutatetext(text, mutate=_mutation_rate):
-
+    """ mutate the text """
     newtext = ''
     for i in text:
         if random.random() <= mutate:
@@ -30,12 +32,13 @@ def mutatetext(text, mutate=_mutation_rate):
 
 def scoring(source, target=_testString):
 
+    """ Score the test """
+
     score = 0
 
     for idx in range(len(target)):
-        ord_source, org_target = ord(source[idx]), ord(target[idx])
 
-        if ord_source == org_target:
+        if ord(source[idx]) == ord(target[idx]):
             score += 1
 
     return score
@@ -88,7 +91,8 @@ if __name__ == "__main__":
                 if gen_score == max_score:
                     break
 
-        logging.info("{}. {} score: {}".format(generation, gen_text, gen_score))
+        logging.info("{}. {} score: {}".format(generation,
+                     gen_text, gen_score))
 
         os.system('clear')
         print(gen_text)
