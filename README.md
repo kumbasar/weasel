@@ -16,6 +16,10 @@ or you can set a custom text. Example:
 ./main.py "MY Cu5T0M text!?"
 ```
 
+Supported characters:
+```
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
 
 ![til](./gif/term.gif)
 
