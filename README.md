@@ -10,6 +10,8 @@ Execute below command
 ./main.py
 ```
 
+![til](./gif/term.gif)
+
 
 ## Example log output
 
