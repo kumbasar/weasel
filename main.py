@@ -67,7 +67,6 @@ if __name__ == "__main__":
 
     gen_score = scoring(gen_text, _testString)
     logging.info("'{}' score is {}".format(gen_text, gen_score))
-    
     logging.info("Population size: {}".format(_population_size))
     logging.info("Mutation rate: {}".format(_mutation_rate))
 
@@ -85,6 +84,9 @@ if __name__ == "__main__":
             if new_score > gen_score:
                 gen_score = new_score
                 gen_text = new_text
+
+                if gen_score == max_score:
+                    break
 
         logging.info("{}. {} score: {}".format(generation, gen_text, gen_score))
 
